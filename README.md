@@ -4,6 +4,7 @@
 
 # Install
 - git clone https://github.com/alf-falkensee/spring-boot-scaffold.git
+- mvn install
 
 # Run
 - mvn spring-boot:run
