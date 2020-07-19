@@ -19,7 +19,7 @@ For MacOSX:
 
 
 For Linux:
-- mvn clean; mvn install; ./run-as-docker.sh
+- mvn clean; mvn install; bash ./run-as-docker.sh
 
 # Still open
 - run from Kubernetes
