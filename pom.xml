@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>hotel</artifactId>
+	<artifactId>alfdockerberlin.springscaffold</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hotel</name>
+	<name>springscaffold</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -52,14 +52,25 @@
 			  <artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-			  <groupId>com.spotify</groupId>
-			  <artifactId>dockerfile-maven-plugin</artifactId>
-			  <version>1.4.8</version>
+			  <groupId>org.codehaus.mojo</groupId>
+			  <artifactId>exec-maven-plugin</artifactId>
+			  <version>1.6.0</version>
+			  <executions>
+			    <execution>
+			      <id>build a docker image</id>
+			      <goals>
+				<goal>exec</goal>
+			      </goals>
+			    </execution>
+			  </executions>
 			  <configuration>
-			    <repository>alfdockerberlin/${project.artifactId}</repository>
+				<executable>bash</executable>
+				<arguments>
+				  <argument>run-as-docker.sh</argument>
+				</arguments>
 			  </configuration>
 			</plugin>
 		</plugins>
 	</build>
-
+	
 </project>
